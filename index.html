@@ -849,11 +849,22 @@
     }
 
     /* Report Figure Gallery */
+    .figure-group-title {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--berry-primary);
+      margin: 20px 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .figure-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
-      margin-top: 16px;
+      margin-top: 12px;
     }
 
     .figure-grid.single-featured {
@@ -882,16 +893,16 @@
 
     .figure-card img {
       width: 100%;
-      height: 210px;
-      object-fit: cover;
+      height: 220px;
+      object-fit: contain;
       border-radius: 12px;
-      background: #fff2f8;
+      background: #fff6fa;
       border: 1px solid #ffe0ed;
     }
 
     .figure-grid.single-featured .figure-card img {
       height: auto;
-      max-height: 540px;
+      max-height: 560px;
       object-fit: contain;
     }
 
@@ -1488,7 +1499,7 @@
           <h2 style="margin-bottom: 12px;">Mục tiêu của Digital Portfolio</h2>
           <ul class="step-list">
             <li class="step-item">
-              <strong>Hệ thống hóa 06 chặng thực hành:</strong> Tập hợp đầy đủ quá trình thực hiện, sản phẩm minh chứng và bản PDF báo cáo gốc của 06 bài tập lớn xuyên suốt học phần.
+              <strong>Hệ thống hóa 06 chặng thực hành:</strong> Tập hợp đầy đủ quá trình thực hiện, 32 ảnh chụp minh chứng và bản PDF báo cáo gốc của 06 bài tập lớn xuyên suốt học phần.
             </li>
             <li class="step-item">
               <strong>Không gian lưu trữ trực quan, dễ chia sẻ:</strong> Giúp giảng viên dễ dàng theo dõi tiến độ, kiểm chứng tính xác thực và trải nghiệm trực tiếp từng sản phẩm số ngay trên một nền tảng thống nhất.
@@ -1571,7 +1582,7 @@
             </div>
             <h3 style="margin-bottom: 8px;">Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
             <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
-              Điều phối dự án xây dựng bộ học liệu số Âm nhạc lớp 7 trong 7 ngày với hệ sinh thái 4 công cụ: ClickUp (15 tasks), Google Docs, Google Drive (/NMCNS) và Zalo.
+              Điều phối dự án xây dựng bộ học liệu số Âm nhạc lớp 7 trong 7 ngày với hệ sinh thái 4 công cụ: ClickUp (15 tasks), Google Docs, Google Drive (/NMCNS) và Zalo (9 ảnh minh chứng).
             </p>
           </div>
           <button class="btn-dreamy" style="width: 100%; justify-content: center;">Xem chi tiết Bài 4 →</button>
@@ -1609,9 +1620,8 @@
       </div>
     </section>
 
-    <!-- ==================== PAGE 3: BÀI TẬP 1 ==================== -->
+    <!-- ==================== PAGE 3: BÀI TẬP 1 (Hình 1 – Hình 12) ==================== -->
     <section id="page-bai-1" class="page-view">
-      <!-- Dreamy PDF Cinema Viewer -->
       <div class="pdf-cinema-card">
         <div class="pdf-cinema-header">
           <div class="pdf-cinema-title">
@@ -1638,7 +1648,6 @@
           Xây dựng thói quen tổ chức không gian lưu trữ ngăn nắp ngay từ những thao tác nền tảng trên Windows File Explorer.
         </p>
 
-        <!-- 1. Mục tiêu bài tập -->
         <div class="section-block">
           <h2 class="section-heading">🎯 1. Mục tiêu bài tập</h2>
           <div class="sub-panel">
@@ -1651,7 +1660,6 @@
           </div>
         </div>
 
-        <!-- 2. Tóm tắt quá trình thực hiện -->
         <div class="section-block">
           <h2 class="section-heading">🛠️ 2. Tóm tắt quá trình thực hiện &amp; Giải quyết vấn đề</h2>
           <div class="grid-2" style="margin-bottom: 16px;">
@@ -1680,9 +1688,8 @@
           </ul>
         </div>
 
-        <!-- 3. Sản phẩm cuối cùng -->
         <div class="section-block">
-          <h2 class="section-heading">✨ 3. Sản phẩm cuối cùng &amp; Minh chứng 12 bước thực hành</h2>
+          <h2 class="section-heading">✨ 3. Sản phẩm cuối cùng &amp; Minh chứng 12 bước thực hành (Hình 1 – Hình 12)</h2>
           <div class="sub-panel" style="margin-bottom: 16px;">
             <h4 style="margin-bottom: 6px;">🌲 Cấu trúc cây thư mục &amp; Quy tắc đặt tên đã thiết lập</h4>
             <pre style="font-family: monospace; font-size: 0.9rem; color: var(--berry-deep); background: #fff5f9; padding: 12px; border-radius: 10px; overflow-x: auto;">D:\
@@ -1751,7 +1758,7 @@
       </div>
     </section>
 
-    <!-- ==================== PAGE 4: BÀI TẬP 2 ==================== -->
+    <!-- ==================== PAGE 4: BÀI TẬP 2 (Hình 13) ==================== -->
     <section id="page-bai-2" class="page-view">
       <div class="pdf-cinema-card">
         <div class="pdf-cinema-header">
@@ -1971,7 +1978,7 @@
       </div>
     </section>
 
-    <!-- ==================== PAGE 5: BÀI TẬP 3 ==================== -->
+    <!-- ==================== PAGE 5: BÀI TẬP 3 (Hình 14 – Hình 16) ==================== -->
     <section id="page-bai-3" class="page-view">
       <div class="pdf-cinema-card">
         <div class="pdf-cinema-header">
@@ -2020,14 +2027,12 @@
             (<em>“không suy diễn ngoài văn bản gốc”</em>, <em>“tự kiểm chứng mốc năm sáng tác trước khi xuất câu hỏi”</em>) và cung cấp khuôn mẫu đầu ra cụ thể.
           </p>
 
-          <!-- Interactive Task Switcher -->
           <div class="tab-bar">
             <button class="tab-btn active" onclick="switchPromptTask(1, this)">📚 Tác vụ 1: Tóm tắt tài liệu học thuật</button>
             <button class="tab-btn" onclick="switchPromptTask(2, this)">🎼 Tác vụ 2: Giải thích Chuyển điệu hòa âm</button>
             <button class="tab-btn" onclick="switchPromptTask(3, this)">📝 Tác vụ 3: Tạo đề ôn tập Tân nhạc VN</button>
           </div>
 
-          <!-- Task 1 Content -->
           <div id="prompt-task-1" class="prompt-task-panel">
             <div class="prompt-tier">
               <strong>Phiên bản 1 – Prompt cơ bản (Hiệu quả: Thấp):</strong>
@@ -2046,7 +2051,6 @@
             </div>
           </div>
 
-          <!-- Task 2 Content -->
           <div id="prompt-task-2" class="prompt-task-panel" style="display: none;">
             <div class="prompt-tier">
               <strong>Phiên bản 1 – Prompt cơ bản (Hiệu quả: Thấp):</strong>
@@ -2065,7 +2069,6 @@
             </div>
           </div>
 
-          <!-- Task 3 Content -->
           <div id="prompt-task-3" class="prompt-task-panel" style="display: none;">
             <div class="prompt-tier">
               <strong>Phiên bản 1 – Prompt cơ bản (Hiệu quả: Thấp):</strong>
@@ -2134,7 +2137,7 @@
       </div>
     </section>
 
-    <!-- ==================== PAGE 6: BÀI TẬP 4 ==================== -->
+    <!-- ==================== PAGE 6: BÀI TẬP 4 (Hình 17 – Hình 25: ĐỦ 9 ẢNH) ==================== -->
     <section id="page-bai-4" class="page-view">
       <div class="pdf-cinema-card">
         <div class="pdf-cinema-header">
@@ -2174,7 +2177,7 @@
         </div>
 
         <div class="section-block">
-          <h2 class="section-heading">🛠️ 2. Tóm tắt quá trình thực hiện &amp; Giải quyết 3 thách thức nhóm</h2>
+          <h2 class="section-heading">🛠️ 2. Tóm tắt quá trình thực hiện &amp; Minh chứng trực quan (Hình 17 – Hình 25)</h2>
           <ul class="step-list" style="margin-bottom: 18px;">
             <li class="step-item">
               <strong>Thách thức 1 – Phân tán thông tin &amp; trôi hạn chót trên chat:</strong> Hai ngày đầu nhóm hay giao việc trực tiếp qua tin nhắn khiến yêu cầu dễ bị trôi.
@@ -2190,22 +2193,59 @@
             </li>
           </ul>
 
+          <!-- Nhóm ảnh ClickUp (3 ảnh con của Hình 1 trong báo cáo) -->
+          <div class="figure-group-title">📌 Nhóm 1 — Quản lý 15 đầu việc tập trung trên ClickUp (Board, Calendar &amp; Dashboard)</div>
           <div class="figure-grid">
-            <div class="figure-card" onclick="openLightbox('Hình 17.jpg', 'Hình 17: Minh chứng thiết lập không gian làm việc tập trung, phân bổ 15 đầu việc và cập nhật tiến độ trên ClickUp')">
+            <div class="figure-card" onclick="openLightbox('Hình 17.jpg', 'Hình 17 (Báo cáo 4 - Hình 1a): Giao diện Board View phân bổ 15 đầu việc theo 4 trạng thái trên ClickUp')">
               <img src="Hình 17.jpg" alt="Hình 17" />
-              <div class="figure-caption">Hình 17: Quản lý 15 đầu việc trên ClickUp</div>
+              <div class="figure-caption">Hình 17: ClickUp Board View (15 đầu việc)</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 18.jpg', 'Hình 18: Minh chứng biên soạn nội dung dự án, trao đổi góp ý và theo dõi lịch sử chỉnh sửa trên Google Docs')">
+            <div class="figure-card" onclick="openLightbox('Hình 18.jpg', 'Hình 18 (Báo cáo 4 - Hình 1b): Giao diện Calendar View theo dõi hạn chót từng nhiệm vụ trong tháng 11/2026')">
               <img src="Hình 18.jpg" alt="Hình 18" />
-              <div class="figure-caption">Hình 18: Cộng tác &amp; Suggesting trên Google Docs</div>
+              <div class="figure-caption">Hình 18: ClickUp Calendar View (Lịch tiến độ)</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 19.jpg', 'Hình 19: Minh chứng tổ chức hệ thống thư mục nhiều cấp tại /NMCNS, chuẩn hóa tên tệp và phân quyền trên Google Drive')">
+            <div class="figure-card" onclick="openLightbox('Hình 19.jpg', 'Hình 19 (Báo cáo 4 - Hình 1c): Giao diện Dashboard View thống kê tỷ lệ hoàn thành và khối lượng công việc')">
               <img src="Hình 19.jpg" alt="Hình 19" />
-              <div class="figure-caption">Hình 19: Cây thư mục /NMCNS trên Google Drive</div>
+              <div class="figure-caption">Hình 19: ClickUp Dashboard View (Thống kê)</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 20.jpg', 'Hình 20: Minh chứng phối hợp điều hành công việc và tương tác tích cực trên ứng dụng Zalo')">
+          </div>
+
+          <!-- Nhóm ảnh Google Docs (2 ảnh con của Hình 2 trong báo cáo) -->
+          <div class="figure-group-title">📝 Nhóm 2 — Biên soạn đề án &amp; Rà soát chỉnh sửa cộng tác trên Google Docs</div>
+          <div class="figure-grid">
+            <div class="figure-card" onclick="openLightbox('Hình 20.jpg', 'Hình 20 (Báo cáo 4 - Hình 2a): Biên soạn Đề án và nội dung triển khai dự án nhóm trên Google Docs (Phần I)')">
               <img src="Hình 20.jpg" alt="Hình 20" />
-              <div class="figure-caption">Hình 20: Điều phối &amp; ghim thông báo trên Zalo</div>
+              <div class="figure-caption">Hình 20: Google Docs – Tổng quan đề án dự án</div>
+            </div>
+            <div class="figure-card" onclick="openLightbox('Hình 21.jpg', 'Hình 21 (Báo cáo 4 - Hình 2b): Sử dụng chế độ Đề xuất chỉnh sửa (Suggesting) và Nhận xét (Commenting) trên Google Docs')">
+              <img src="Hình 21.jpg" alt="Hình 21" />
+              <div class="figure-caption">Hình 21: Google Docs – Đề xuất chỉnh sửa &amp; góp ý</div>
+            </div>
+          </div>
+
+          <!-- Nhóm ảnh Google Drive (2 ảnh con của Hình 3 trong báo cáo) -->
+          <div class="figure-group-title">☁️ Nhóm 3 — Tổ chức cây thư mục phân tầng &amp; Chuẩn hóa tên tệp trên Google Drive</div>
+          <div class="figure-grid">
+            <div class="figure-card" onclick="openLightbox('Hình 22.jpg', 'Hình 22 (Báo cáo 4 - Hình 3a): Hệ thống cây thư mục 04 nhánh chuyên biệt tại đường dẫn gốc /NMCNS trên Google Drive')">
+              <img src="Hình 22.jpg" alt="Hình 22" />
+              <div class="figure-caption">Hình 22: Google Drive – Cây thư mục gốc /NMCNS</div>
+            </div>
+            <div class="figure-card" onclick="openLightbox('Hình 23.jpg', 'Hình 23 (Báo cáo 4 - Hình 3b): Chuẩn hóa tên 03 loại tệp (Docs, Sheets, Slides) trong thư mục 02_NoiDung_HocLieu_AmNhac')">
+              <img src="Hình 23.jpg" alt="Hình 23" />
+              <div class="figure-caption">Hình 23: Google Drive – Chuẩn hóa tệp trong thư mục con</div>
+            </div>
+          </div>
+
+          <!-- Nhóm ảnh Zalo (2 ảnh con của Hình 4 trong báo cáo) -->
+          <div class="figure-group-title">💬 Nhóm 4 — Điều phối họp trực tuyến &amp; Phản hồi nhanh trên Zalo</div>
+          <div class="figure-grid">
+            <div class="figure-card" onclick="openLightbox('Hình 24.jpg', 'Hình 24 (Báo cáo 4 - Hình 4a): Ghim liên kết Google Meet, thông báo rà soát mục lục và nội dung trên nhóm Zalo (10:50)')">
+              <img src="Hình 24.jpg" alt="Hình 24" />
+              <div class="figure-caption">Hình 24: Zalo (10:50) – Ghim Meet &amp; kiểm tra nội dung</div>
+            </div>
+            <div class="figure-card" onclick="openLightbox('Hình 25.jpg', 'Hình 25 (Báo cáo 4 - Hình 4b): Trao đổi rà soát lỗi phông chữ Slide và xác nhận chỉnh sửa kịp thời trên Zalo (11:17)')">
+              <img src="Hình 25.jpg" alt="Hình 25" />
+              <div class="figure-caption">Hình 25: Zalo (11:17) – Phản hồi sửa lỗi font chữ Slide</div>
             </div>
           </div>
         </div>
@@ -2260,7 +2300,7 @@
       </div>
     </section>
 
-    <!-- ==================== PAGE 7: BÀI TẬP 5 ==================== -->
+    <!-- ==================== PAGE 7: BÀI TẬP 5 (Hình 26 – Hình 31) ==================== -->
     <section id="page-bai-5" class="page-view">
       <div class="pdf-cinema-card">
         <div class="pdf-cinema-header">
@@ -2300,7 +2340,7 @@
         </div>
 
         <div class="section-block">
-          <h2 class="section-heading">🛠️ 2. Quy trình phối hợp 3 công cụ AI &amp; Quá trình hiệu đính</h2>
+          <h2 class="section-heading">🛠️ 2. Quy trình phối hợp 3 công cụ AI &amp; Quá trình hiệu đính (Hình 26 – Hình 30)</h2>
           <div class="grid-3" style="margin-bottom: 16px;">
             <div class="sub-panel">
               <h4>1️⃣ Google Gemini (Văn bản)</h4>
@@ -2325,7 +2365,6 @@
             </div>
           </div>
 
-          <!-- Contribution Ratio Meter -->
           <div class="sub-panel" style="margin-bottom: 18px;">
             <h4 style="margin-bottom: 4px;">⚖️ Tỷ trọng đóng góp trong sản phẩm hoàn thiện (Kiểm soát chất lượng &amp; đạo đức sáng tạo)</h4>
             <div class="ratio-bar">
@@ -2371,35 +2410,35 @@
           </div>
 
           <div class="figure-grid">
-            <div class="figure-card" onclick="openLightbox('Hình 21.jpg', 'Hình 21: Giao diện nhập câu lệnh và kết quả phác thảo cấu trúc nội dung trên Google Gemini')">
-              <img src="Hình 21.jpg" alt="Hình 21" />
-              <div class="figure-caption">Hình 21: Phác thảo khung nội dung trên Gemini</div>
+            <div class="figure-card" onclick="openLightbox('Hình 26.jpg', 'Hình 26: Giao diện nhập câu lệnh và kết quả phác thảo cấu trúc nội dung trên Google Gemini')">
+              <img src="Hình 26.jpg" alt="Hình 26" />
+              <div class="figure-caption">Hình 26: Phác thảo khung nội dung trên Gemini</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 22.jpg', 'Hình 22: Quá trình tinh chỉnh văn bản cô đọng cho từng phân mục infographic trên Google Gemini')">
-              <img src="Hình 22.jpg" alt="Hình 22" />
-              <div class="figure-caption">Hình 22: Cô đọng mô tả 4 họ nhạc cụ (&lt;35 từ)</div>
+            <div class="figure-card" onclick="openLightbox('Hình 27.jpg', 'Hình 27: Quá trình tinh chỉnh văn bản cô đọng cho từng phân mục infographic trên Google Gemini')">
+              <img src="Hình 27.jpg" alt="Hình 27" />
+              <div class="figure-caption">Hình 27: Cô đọng mô tả 4 họ nhạc cụ (&lt;35 từ)</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 23.jpg', 'Hình 23: Thử nghiệm câu lệnh tạo hình ảnh minh họa nhạc cụ dân tộc trên DALL-E qua ChatGPT')">
-              <img src="Hình 23.jpg" alt="Hình 23" />
-              <div class="figure-caption">Hình 23: Phác thảo bộ nhạc cụ trên DALL-E</div>
+            <div class="figure-card" onclick="openLightbox('Hình 28.jpg', 'Hình 28: Thử nghiệm câu lệnh tạo hình ảnh minh họa nhạc cụ dân tộc trên DALL-E qua ChatGPT')">
+              <img src="Hình 28.jpg" alt="Hình 28" />
+              <div class="figure-caption">Hình 28: Phác thảo bộ nhạc cụ trên DALL-E</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 24.jpg', 'Hình 24: Kết quả tinh chỉnh phong cách đồ họa và đồng bộ bảng màu minh họa trên DALL-E')">
-              <img src="Hình 24.jpg" alt="Hình 24" />
-              <div class="figure-caption">Hình 24: Tinh chỉnh cận cảnh đàn tranh &amp; sáo trúc</div>
+            <div class="figure-card" onclick="openLightbox('Hình 29.jpg', 'Hình 29: Kết quả tinh chỉnh phong cách đồ họa và đồng bộ bảng màu minh họa trên DALL-E')">
+              <img src="Hình 29.jpg" alt="Hình 29" />
+              <div class="figure-caption">Hình 29: Tinh chỉnh cận cảnh đàn tranh &amp; sáo trúc</div>
             </div>
-            <div class="figure-card" onclick="openLightbox('Hình 25.jpg', 'Hình 25: Quá trình sử dụng Canva AI hỗ trợ sắp xếp bố cục và tinh chỉnh các phiên bản thiết kế trung gian')">
-              <img src="Hình 25.jpg" alt="Hình 25" />
-              <div class="figure-caption">Hình 25: Dàn trang &amp; tái cấu trúc trên Canva AI</div>
+            <div class="figure-card" onclick="openLightbox('Hình 30.jpg', 'Hình 30: Quá trình sử dụng Canva AI hỗ trợ sắp xếp bố cục và tinh chỉnh các phiên bản thiết kế trung gian')">
+              <img src="Hình 30.jpg" alt="Hình 30" />
+              <div class="figure-caption">Hình 30: Dàn trang &amp; tái cấu trúc trên Canva AI</div>
             </div>
           </div>
         </div>
 
         <div class="section-block">
-          <h2 class="section-heading">✨ 3. Sản phẩm cuối cùng: Infographic “Thanh Âm Đất Việt”</h2>
+          <h2 class="section-heading">✨ 3. Sản phẩm cuối cùng: Infographic “Thanh Âm Đất Việt” (Hình 31)</h2>
           <div class="figure-grid single-featured">
-            <div class="figure-card" onclick="openLightbox('Hình 26.jpg', 'Hình 26: Sản phẩm infographic hoàn thiện về phân loại và giá trị giáo dục của nhạc cụ dân tộc Việt Nam')">
-              <img src="Hình 26.jpg" alt="Hình 26" />
-              <div class="figure-caption">Hình 26: Ấn phẩm Infographic hoàn thiện (Khổ dọc tỷ lệ 1:2.5)</div>
+            <div class="figure-card" onclick="openLightbox('Hình 31.jpg', 'Hình 31: Sản phẩm infographic hoàn thiện về phân loại và giá trị giáo dục của nhạc cụ dân tộc Việt Nam')">
+              <img src="Hình 31.jpg" alt="Hình 31" />
+              <div class="figure-caption">Hình 31: Ấn phẩm Infographic hoàn thiện (Khổ dọc tỷ lệ 1:2.5)</div>
             </div>
           </div>
         </div>
@@ -2412,7 +2451,7 @@
       </div>
     </section>
 
-    <!-- ==================== PAGE 8: BÀI TẬP 6 ==================== -->
+    <!-- ==================== PAGE 8: BÀI TẬP 6 (Hình 32) ==================== -->
     <section id="page-bai-6" class="page-view">
       <div class="pdf-cinema-card">
         <div class="pdf-cinema-header">
@@ -2507,7 +2546,7 @@
         </div>
 
         <div class="section-block">
-          <h2 class="section-heading">✨ 3. Sản phẩm cuối cùng: Bộ 6 nguyên tắc vàng &amp; Infographic tuyên truyền</h2>
+          <h2 class="section-heading">✨ 3. Sản phẩm cuối cùng: Bộ 6 nguyên tắc vàng &amp; Infographic (Hình 32)</h2>
           <div class="grid-2" style="align-items: center;">
             <ul class="step-list">
               <li class="step-item"><strong>1. Chủ thể tư duy (Human-in-the-Loop):</strong> Con người luôn định hướng, phản biện và quyết định cuối cùng; đóng góp trí tuệ cá nhân chiếm ưu thế tuyệt đối.</li>
@@ -2518,9 +2557,9 @@
               <li class="step-item"><strong>6. Phát triển thực chất (Skill Growth):</strong> Coi AI là trợ giảng gợi mở góc nhìn để rèn luyện chuyên môn sâu và năng lực sư phạm, không đối phó điểm số.</li>
             </ul>
 
-            <div class="figure-card" onclick="openLightbox('Hình 27.jpg', 'Hình 27: Infographic minh họa bộ nguyên tắc sử dụng AI có trách nhiệm trong học thuật')">
-              <img src="Hình 27.jpg" alt="Hình 27" style="height: auto; max-height: 560px; object-fit: contain;" />
-              <div class="figure-caption">Hình 27: Infographic 6 Nguyên tắc sử dụng AI có trách nhiệm</div>
+            <div class="figure-card" onclick="openLightbox('Hình 32.jpg', 'Hình 32: Infographic minh họa bộ nguyên tắc sử dụng AI có trách nhiệm trong học thuật')">
+              <img src="Hình 32.jpg" alt="Hình 32" style="height: auto; max-height: 560px; object-fit: contain;" />
+              <div class="figure-caption">Hình 32: Infographic 6 Nguyên tắc sử dụng AI có trách nhiệm</div>
             </div>
           </div>
         </div>
@@ -2573,7 +2612,7 @@
           <div class="sub-panel">
             <h3 style="margin-bottom: 10px;">🧩 4. Thách thức gặp phải &amp; Cách vượt qua</h3>
             <p style="font-size: 0.94rem;">
-              Thách thức lớn nhất của mình là cân đối thời gian giữa lịch luyện chuyên môn trên lớp với việc chuẩn hóa đồng bộ 06 báo cáo, 27 hình ảnh minh chứng và giao diện website sao cho vừa đẹp mắt, nhiều chuyển động nhưng vẫn hiển thị mượt mà trên cả máy tính lẫn điện thoại. Mình đã áp dụng chính phương pháp chia nhỏ đầu việc và đặt mốc kiểm thử cuốn chiếu từ Bài tập 4 để rà soát từng liên kết Google Drive công khai, đảm bảo không có bất kỳ lỗi hiển thị hay liên kết hỏng nào.
+              Thách thức lớn nhất của mình là cân đối thời gian giữa lịch luyện chuyên môn trên lớp với việc chuẩn hóa đồng bộ 06 báo cáo, 32 hình ảnh minh chứng và giao diện website sao cho vừa đẹp mắt, nhiều chuyển động nhưng vẫn hiển thị mượt mà trên cả máy tính lẫn điện thoại. Mình đã áp dụng chính phương pháp chia nhỏ đầu việc và đặt mốc kiểm thử cuốn chiếu từ Bài tập 4 để rà soát từng liên kết Google Drive công khai, đảm bảo không có bất kỳ lỗi hiển thị hay liên kết hỏng nào.
             </p>
           </div>
         </div>
@@ -2695,7 +2734,7 @@
       document.getElementById('navLinks').classList.remove('mobile-open');
       history.replaceState(null, '', '#' + pageId);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      playPianoNote(587.33, 0, 0.08, 0.9); // D5 soft chime on page switch
+      playPianoNote(587.33, 0, 0.08, 0.9);
       setTimeout(observeReveals, 80);
     }
 
@@ -2776,7 +2815,7 @@
 
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btnEl.classList.add('active');
-      playPianoNote(739.99, 0, 0.07, 0.8); // F#5
+      playPianoNote(739.99, 0, 0.07, 0.8);
     }
 
     // ==================== 6. TABLE SEARCH FILTER (BÀI 2) ====================
@@ -2831,7 +2870,6 @@
     // ==================== 8. WEB AUDIO API: CANON IN D (PIANO & CELLO) + MINI PIANO ====================
     let audioCtx = null;
     let masterBus = null;
-    let activeTimers = [];
     let activeWelcomeTimers = [];
 
     function getAudioEngine() {
@@ -2845,7 +2883,6 @@
         const masterGain = audioCtx.createGain();
         masterGain.gain.setValueAtTime(0.85, audioCtx.currentTime);
 
-        // Warm acoustic room reverb/echo
         const delayL = audioCtx.createDelay();
         const delayR = audioCtx.createDelay();
         delayL.delayTime.value = 0.24;
@@ -2879,7 +2916,6 @@
       return { ctx: audioCtx, out: masterBus };
     }
 
-    // D Major Note Table (Hz)
     const NOTE = {
       F2s: 92.50, G2: 98.00, A2: 110.00, B2: 123.47,
       C3s: 138.59, D3: 146.83, E3: 164.81, F3s: 185.00, G3: 196.00, A3: 220.00, B3: 246.94,
@@ -2887,7 +2923,6 @@
       C5s: 554.37, D5: 587.33, E5: 659.25, F5s: 739.99
     };
 
-    // Warm Acoustic-style Grand Piano Voice
     function playPianoNote(freq, delaySec = 0, volume = 0.14, duration = 1.65) {
       try {
         const { ctx, out } = getAudioEngine();
@@ -2898,7 +2933,7 @@
         osc1.type = 'triangle';
         osc2.type = 'sine';
         osc1.frequency.setValueAtTime(freq, t);
-        osc2.frequency.setValueAtTime(freq * 2, t); // harmonic shimmer
+        osc2.frequency.setValueAtTime(freq * 2, t);
 
         const subGain = ctx.createGain();
         subGain.gain.setValueAtTime(freq < 140 ? 0.38 : 0.2, t);
@@ -2927,7 +2962,6 @@
       } catch (err) {}
     }
 
-    // Expressive Bowed Cello Voice with Warm Vibrato
     function playCelloNote(freq, delaySec = 0, volume = 0.13, duration = 1.6) {
       try {
         const { ctx, out } = getAudioEngine();
@@ -2942,7 +2976,6 @@
         oscSaw.detune.setValueAtTime(-3.5, t);
         oscTri.detune.setValueAtTime(3.5, t);
 
-        // Gentle expressivo vibrato
         const vibrato = ctx.createOscillator();
         const vibGain = ctx.createGain();
         vibrato.frequency.setValueAtTime(5.1, t);
@@ -2988,41 +3021,35 @@
       } catch (err) {}
     }
 
-    // Canon in D Harmonic Progression (8 chords x 4 eighth-note steps = 32 steps per cycle)
-    const CANON_STEP_MS = 415; // ~72 BPM eighth-note pulse matching the Brooklyn Duo feel
+    const CANON_STEP_MS = 415;
     const CANON_PIANO_CHORDS = [
-      [NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s],   // 0: D
-      [NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s],   // 1: A
-      [NOTE.B2, NOTE.F3s, NOTE.B3, NOTE.D4],   // 2: Bm
-      [NOTE.F2s, NOTE.C3s, NOTE.F3s, NOTE.A3], // 3: F#m
-      [NOTE.G2, NOTE.D3, NOTE.G3, NOTE.B3],    // 4: G
-      [NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s],   // 5: D
-      [NOTE.G2, NOTE.D3, NOTE.G3, NOTE.B3],    // 6: G
-      [NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s]    // 7: A
+      [NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s],
+      [NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s],
+      [NOTE.B2, NOTE.F3s, NOTE.B3, NOTE.D4],
+      [NOTE.F2s, NOTE.C3s, NOTE.F3s, NOTE.A3],
+      [NOTE.G2, NOTE.D3, NOTE.G3, NOTE.B3],
+      [NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s],
+      [NOTE.G2, NOTE.D3, NOTE.G3, NOTE.B3],
+      [NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s]
     ];
 
-    // Cello melody cycles (32 steps each; null = hold/rest)
     const CANON_CELLO_CYCLES = [
-      // Cycle 0: Piano intro (steps 0..15), then soft Cello swell-in on steps 16..31 (G - D - G - A)
       [
         null,null,null,null, null,null,null,null, null,null,null,null, null,null,null,null,
         {f:NOTE.B3, d:4},null,null,null, {f:NOTE.A3, d:4},null,null,null, {f:NOTE.B3, d:4},null,null,null, {f:NOTE.C4s, d:4},null,null,null
       ],
-      // Cycle 1: Classic Canon Theme I (F#4 - E4 - D4 - C#4 - B3 - A3 - B3 - C#4)
       [
         {f:NOTE.F4s, d:4},null,null,null, {f:NOTE.E4, d:4},null,null,null,
         {f:NOTE.D4, d:4},null,null,null,  {f:NOTE.C4s, d:4},null,null,null,
         {f:NOTE.B3, d:4},null,null,null,  {f:NOTE.A3, d:4},null,null,null,
         {f:NOTE.B3, d:4},null,null,null,  {f:NOTE.C4s, d:4},null,null,null
       ],
-      // Cycle 2: Classic Canon Theme II (D4 - C#4 - B3 - A3 - G3 - F#3 - G3 - E3)
       [
         {f:NOTE.D4, d:4},null,null,null,  {f:NOTE.C4s, d:4},null,null,null,
         {f:NOTE.B3, d:4},null,null,null,  {f:NOTE.A3, d:4},null,null,null,
         {f:NOTE.G3, d:4},null,null,null,  {f:NOTE.F3s, d:4},null,null,null,
         {f:NOTE.G3, d:4},null,null,null,  {f:NOTE.E3, d:4},null,null,null
       ],
-      // Cycle 3: Iconic Quarter-note Singing Line
       [
         {f:NOTE.D4, d:2},null, {f:NOTE.F4s, d:2},null,
         {f:NOTE.A4, d:2},null, {f:NOTE.G4, d:2},null,
@@ -3033,7 +3060,6 @@
         {f:NOTE.G4, d:2},null, {f:NOTE.B4, d:2},null,
         {f:NOTE.A4, d:2},null, {f:NOTE.G4, d:2},null
       ],
-      // Cycle 4: Expressive Eighth-note Flow
       [
         {f:NOTE.F4s, d:1}, {f:NOTE.D4, d:1}, {f:NOTE.E4, d:1}, {f:NOTE.F4s, d:1},
         {f:NOTE.E4, d:1},  {f:NOTE.C4s, d:1},{f:NOTE.A3, d:1}, {f:NOTE.C4s, d:1},
@@ -3046,7 +3072,6 @@
       ]
     ];
 
-    // Interactive Mini Piano Keys
     document.querySelectorAll('.piano-key').forEach(key => {
       key.addEventListener('mousedown', (e) => {
         const freq = parseFloat(key.dataset.note);
@@ -3068,7 +3093,6 @@
       }
     });
 
-    // Welcome Button: Plays Opening Excerpt of Canon in D (Piano + Cello)
     let isWelcomePlaying = false;
     function stopWelcomeCanon() {
       activeWelcomeTimers.forEach(t => clearTimeout(t));
@@ -3098,7 +3122,6 @@
       const stepMs = 380;
       const keyButtons = document.querySelectorAll('.piano-key');
 
-      // 4-chord opening excerpt: D -> A -> Bm -> F#m -> final warm D chord
       const welcomePiano = [
         NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s,
         NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s,
@@ -3106,10 +3129,10 @@
         NOTE.F2s, NOTE.C3s, NOTE.F3s, NOTE.A3
       ];
       const welcomeCello = {
-        0:  { f: NOTE.F4s, d: 4, keyIdx: 4 }, // F#4
-        4:  { f: NOTE.E4,  d: 4, keyIdx: 2 }, // E4
-        8:  { f: NOTE.D4,  d: 4, keyIdx: 1 }, // D4
-        12: { f: NOTE.C4s, d: 4, keyIdx: 0 }  // C#4
+        0:  { f: NOTE.F4s, d: 4, keyIdx: 4 },
+        4:  { f: NOTE.E4,  d: 4, keyIdx: 2 },
+        8:  { f: NOTE.D4,  d: 4, keyIdx: 1 },
+        12: { f: NOTE.C4s, d: 4, keyIdx: 0 }
       };
 
       welcomePiano.forEach((pFreq, idx) => {
@@ -3130,7 +3153,6 @@
         activeWelcomeTimers.push(timer);
       });
 
-      // Warm final Tonic D resolution chord
       const endTimer = setTimeout(() => {
         playPianoNote(NOTE.D3, 0, 0.14, 2.4);
         playPianoNote(NOTE.A3, 0.04, 0.12, 2.4);
@@ -3150,7 +3172,6 @@
       activeWelcomeTimers.push(doneTimer);
     }
 
-    // Floating Canon in D (Piano & Cello) Looping Background Player
     let musicInterval = null;
     let isPlayingMusic = false;
     let canonStepIndex = 0;
@@ -3161,11 +3182,9 @@
       const arpIdx = canonStepIndex % 4;
       const pianoFreq = CANON_PIANO_CHORDS[chordIdx][arpIdx];
 
-      // Gentle expressive rubato feel on piano velocity
       const pianoVel = arpIdx === 0 ? 0.13 : 0.095;
       playPianoNote(pianoFreq, 0, pianoVel, 1.85);
 
-      // Cello melody
       const celloEvent = CANON_CELLO_CYCLES[canonCycleIndex][canonStepIndex];
       if (celloEvent) {
         const durSec = (celloEvent.d * CANON_STEP_MS) / 1000 + 0.14;
@@ -3178,7 +3197,7 @@
         canonStepIndex = 0;
         canonCycleIndex++;
         if (canonCycleIndex >= CANON_CELLO_CYCLES.length) {
-          canonCycleIndex = 1; // Loop seamlessly through Themes 1–4
+          canonCycleIndex = 1;
         }
       }
     }
