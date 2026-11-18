@@ -16,13 +16,13 @@
       --pink-pastel: #ffd6e6;
       --cream-pearl: #fff9fc;
       --glass-bg: rgba(255, 248, 252, 0.86);
-      --glass-strong: rgba(255, 251, 253, 0.94);
-      --glass-border: rgba(255, 255, 255, 0.85);
+      --glass-strong: rgba(255, 251, 253, 0.95);
+      --glass-border: rgba(255, 255, 255, 0.88);
       --text-main: #43182c;
       --text-muted: #78425b;
       --gold-star: #ffcf5c;
       --shadow-dreamy: 0 18px 45px rgba(94, 25, 56, 0.18);
-      --shadow-hover: 0 24px 55px rgba(168, 56, 104, 0.28);
+      --shadow-hover: 0 24px 55px rgba(168, 56, 104, 0.30);
       --radius-xl: 28px;
       --radius-lg: 20px;
       --radius-md: 14px;
@@ -54,6 +54,26 @@
       line-height: 1.7;
     }
 
+    /* Top Reading Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(90deg, #ffd6e6, #ffcf5c, #f48fb1, #a83868);
+      background-size: 200% 100%;
+      animation: shimmerBar 3s linear infinite;
+      z-index: 2500;
+      transition: width 0.12s ease-out;
+      box-shadow: 0 0 10px rgba(255, 207, 92, 0.7);
+    }
+
+    @keyframes shimmerBar {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
     /* Animated Galaxy & Music Notes Overlay */
     #cosmic-canvas {
       position: fixed;
@@ -64,7 +84,7 @@
       z-index: 0;
     }
 
-    /* Ambient Glowing Orbs */
+    /* Ambient Glowing Orbs + Dreamy Spiral Aura matching back.jpg */
     .ambient-orb {
       position: fixed;
       border-radius: 50%;
@@ -74,23 +94,49 @@
       animation: floatOrb 14s ease-in-out infinite alternate;
     }
     .orb-1 {
-      width: 340px;
-      height: 340px;
+      width: 360px;
+      height: 360px;
       background: rgba(255, 194, 220, 0.45);
-      top: -60px;
+      top: -70px;
       left: -80px;
     }
     .orb-2 {
-      width: 420px;
-      height: 420px;
-      background: rgba(214, 90, 142, 0.32);
-      bottom: -100px;
+      width: 440px;
+      height: 440px;
+      background: rgba(214, 90, 142, 0.35);
+      bottom: -110px;
       right: -80px;
       animation-delay: -5s;
     }
+    .orb-3 {
+      width: 260px;
+      height: 260px;
+      background: rgba(255, 219, 138, 0.22);
+      top: 42%;
+      left: 48%;
+      animation-delay: -8s;
+    }
     @keyframes floatOrb {
       0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(35px, 28px) scale(1.08); }
+      100% { transform: translate(35px, 28px) scale(1.1); }
+    }
+
+    /* Decorative Floating Stickers (Stars & Planets like back.jpg) */
+    .sky-sticker {
+      position: fixed;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.72;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.65));
+      animation: twinkleFloat 6s ease-in-out infinite;
+    }
+    .sticker-1 { top: 14%; left: 3%; font-size: 1.5rem; animation-delay: 0s; }
+    .sticker-2 { top: 26%; right: 3.5%; font-size: 1.7rem; animation-delay: 1.5s; }
+    .sticker-3 { bottom: 18%; left: 4%; font-size: 1.4rem; animation-delay: 2.8s; }
+
+    @keyframes twinkleFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); opacity: 0.55; }
+      50% { transform: translateY(-12px) rotate(10deg) scale(1.15); opacity: 0.92; }
     }
 
     /* Navigation Header */
@@ -101,17 +147,22 @@
       max-width: 1220px;
       margin: 14px auto 0;
       padding: 10px 22px;
-      background: rgba(255, 246, 251, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 246, 251, 0.86);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
       border: 1.5px solid var(--glass-border);
       border-radius: 999px;
-      box-shadow: 0 12px 35px rgba(94, 25, 56, 0.16);
+      box-shadow: 0 12px 35px rgba(94, 25, 56, 0.18);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
       transition: all 0.35s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 249, 253, 0.94);
+      box-shadow: 0 16px 40px rgba(94, 25, 56, 0.24);
     }
 
     .brand {
@@ -126,16 +177,16 @@
     }
 
     .brand-disc {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--berry-primary), var(--pink-soft));
+      background: conic-gradient(from 0deg, var(--berry-primary), var(--pink-soft), #ffcf5c, var(--berry-primary));
       display: grid;
       place-items: center;
       color: #fff;
       font-size: 1.2rem;
       box-shadow: 0 4px 14px rgba(168, 56, 104, 0.4);
-      animation: spinSlow 12s linear infinite;
+      animation: spinSlow 10s linear infinite;
     }
 
     @keyframes spinSlow {
@@ -184,8 +235,8 @@
       position: absolute;
       top: calc(100% + 12px);
       left: 50%;
-      transform: translateX(-50%) translateY(10px);
-      width: 310px;
+      transform: translateX(-50%) translateY(10px) scale(0.96);
+      width: 315px;
       background: var(--glass-strong);
       backdrop-filter: blur(24px);
       border: 1.5px solid var(--glass-border);
@@ -202,7 +253,7 @@
     .dropdown.open .dropdown-menu {
       opacity: 1;
       visibility: visible;
-      transform: translateX(-50%) translateY(0);
+      transform: translateX(-50%) translateY(0) scale(1);
     }
 
     .dropdown-item {
@@ -225,7 +276,7 @@
 
     .dropdown-item:hover,
     .dropdown-item.active {
-      background: linear-gradient(90deg, rgba(244, 143, 177, 0.28), rgba(255, 214, 230, 0.45));
+      background: linear-gradient(90deg, rgba(244, 143, 177, 0.28), rgba(255, 214, 230, 0.5));
       color: var(--berry-primary);
       transform: translateX(4px);
     }
@@ -273,12 +324,23 @@
     @keyframes pageEnter {
       from {
         opacity: 0;
-        transform: translateY(22px) scale(0.985);
+        transform: translateY(24px) scale(0.985);
       }
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
       }
+    }
+
+    /* Scroll Reveal Animation */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-item.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Glass Cards */
@@ -305,7 +367,7 @@
       height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
       transform: skewX(-20deg);
-      transition: left 0.75s ease;
+      transition: left 0.8s ease;
       pointer-events: none;
     }
 
@@ -367,13 +429,34 @@
       align-items: center;
     }
 
+    /* Orbiting Galaxy Rings around Avatar */
+    .orbit-ring {
+      position: absolute;
+      width: 294px;
+      height: 294px;
+      top: -17px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(255, 255, 255, 0.8);
+      animation: spinSlow 24s linear infinite;
+      pointer-events: none;
+    }
+    .orbit-ring::after {
+      content: "✦";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      color: #fff6c2;
+      font-size: 1.15rem;
+      text-shadow: 0 0 8px #ffcf5c;
+    }
+
     .vinyl-halo {
       position: relative;
       width: 260px;
       height: 260px;
       border-radius: 50%;
       padding: 12px;
-      background: conic-gradient(from 0deg, #ff9ec4, #fff0f6, #d15b8c, #ffd6e6, #ff9ec4);
+      background: conic-gradient(from 0deg, #ff9ec4, #fff0f6, #d15b8c, #ffdf9a, #ffd6e6, #ff9ec4);
       box-shadow: 0 18px 40px rgba(168, 56, 104, 0.32);
       animation: floatGentle 4.5s ease-in-out infinite;
     }
@@ -395,7 +478,7 @@
 
     .floating-note {
       position: absolute;
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       color: var(--berry-primary);
       background: #fff;
       width: 44px;
@@ -413,6 +496,51 @@
     @keyframes bounceNote {
       0%, 100% { transform: translateY(0) rotate(-6deg); }
       50% { transform: translateY(-9px) rotate(8deg); }
+    }
+
+    /* Live Dancing Soundwave Badge under Avatar */
+    .melody-pill {
+      margin-top: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1.5px solid #ffc8df;
+      padding: 7px 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+      color: var(--berry-primary);
+      font-size: 0.88rem;
+      box-shadow: 0 6px 16px rgba(168, 56, 104, 0.12);
+    }
+
+    .wave-bars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 16px;
+    }
+    .wave-bar {
+      width: 3px;
+      height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(180deg, var(--berry-primary), var(--pink-soft));
+      animation: waveIdle 1.6s ease-in-out infinite alternate;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.25s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.5s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.75s; }
+    .wave-bars.active-song .wave-bar {
+      animation: waveDance 0.45s ease-in-out infinite alternate;
+    }
+
+    @keyframes waveIdle {
+      from { height: 4px; }
+      to { height: 10px; }
+    }
+    @keyframes waveDance {
+      from { height: 4px; }
+      to { height: 16px; }
     }
 
     .student-badges {
@@ -434,6 +562,11 @@
       align-items: center;
       gap: 7px;
       box-shadow: 0 4px 12px rgba(168, 56, 104, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .info-chip:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(168, 56, 104, 0.16);
     }
 
     /* Interactive Mini Piano Widget */
@@ -503,6 +636,7 @@
       border-bottom-width: 2px;
       background: linear-gradient(180deg, #ffbdd8 0%, #f48fb1 100%);
       color: #fff;
+      box-shadow: 0 0 14px rgba(244, 143, 177, 0.75);
     }
 
     /* Two-column / Three-column Grids */
@@ -519,8 +653,8 @@
     }
 
     .sub-panel {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1.5px solid rgba(255, 214, 230, 0.9);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1.5px solid rgba(255, 214, 230, 0.92);
       border-radius: var(--radius-lg);
       padding: 22px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -531,9 +665,9 @@
       box-shadow: 0 14px 30px rgba(168, 56, 104, 0.14);
     }
 
-    /* Project Overview Cards */
+    /* Project Overview Cards with 3D Tilt support */
     .project-card {
-      background: rgba(255, 252, 254, 0.9);
+      background: rgba(255, 252, 254, 0.92);
       border: 1.5px solid #fff;
       border-radius: var(--radius-xl);
       padding: 26px;
@@ -541,12 +675,13 @@
       flex-direction: column;
       justify-content: space-between;
       box-shadow: 0 14px 34px rgba(94, 25, 56, 0.14);
-      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: transform 0.25s ease, box-shadow 0.35s ease, border-color 0.35s ease;
       cursor: pointer;
+      transform-style: preserve-3d;
+      will-change: transform;
     }
 
     .project-card:hover {
-      transform: translateY(-8px) scale(1.015);
       box-shadow: var(--shadow-hover);
       border-color: #ff9ec4;
     }
@@ -570,12 +705,12 @@
 
     /* Dreamy PDF Cinema Viewer at top of each exercise */
     .pdf-cinema-card {
-      background: linear-gradient(135deg, rgba(94, 25, 56, 0.92), rgba(168, 56, 104, 0.9));
+      background: linear-gradient(135deg, rgba(94, 25, 56, 0.93), rgba(168, 56, 104, 0.91));
       color: #fff;
       border-radius: var(--radius-xl);
       padding: 22px 26px;
       margin-bottom: 26px;
-      border: 1.5px solid rgba(255, 214, 230, 0.6);
+      border: 1.5px solid rgba(255, 214, 230, 0.65);
       box-shadow: 0 18px 42px rgba(94, 25, 56, 0.28);
     }
 
@@ -651,8 +786,10 @@
       transition: all 0.25s ease;
     }
 
-    .btn-pearl:hover {
+    .btn-pearl:hover,
+    .btn-pearl.active-playing {
       background: #ffe8f2;
+      border-color: var(--berry-mid);
       transform: translateY(-2px);
     }
 
@@ -668,11 +805,6 @@
 
     .pdf-frame-wrap.expanded {
       height: 760px;
-    }
-
-    .pdf-frame-wrap.collapsed {
-      height: 0px;
-      border: none;
     }
 
     .pdf-frame-wrap iframe {
@@ -704,11 +836,16 @@
     }
 
     .step-item {
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.85);
       border-left: 4px solid var(--berry-mid);
       padding: 14px 18px;
       border-radius: 12px;
       box-shadow: 0 4px 14px rgba(94, 25, 56, 0.05);
+      transition: transform 0.25s ease, border-left-color 0.25s ease;
+    }
+    .step-item:hover {
+      transform: translateX(4px);
+      border-left-color: var(--berry-deep);
     }
 
     /* Report Figure Gallery */
@@ -731,15 +868,15 @@
       padding: 12px;
       box-shadow: 0 10px 24px rgba(94, 25, 56, 0.09);
       cursor: zoom-in;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
     .figure-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 34px rgba(168, 56, 104, 0.22);
+      transform: translateY(-6px) scale(1.015);
+      box-shadow: 0 18px 36px rgba(168, 56, 104, 0.24);
       border-color: var(--berry-mid);
     }
 
@@ -771,7 +908,7 @@
       overflow-x: auto;
       border-radius: 16px;
       border: 1.5px solid #ffd1e4;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       margin-top: 14px;
     }
 
@@ -845,6 +982,7 @@
       background: var(--berry-primary);
       color: #fff;
       border-color: var(--berry-primary);
+      box-shadow: 0 6px 16px rgba(168, 56, 104, 0.24);
     }
 
     .prompt-tier {
@@ -853,6 +991,10 @@
       padding: 16px 20px;
       margin-bottom: 12px;
       border: 1.5px solid #ffd6e6;
+      transition: transform 0.2s ease;
+    }
+    .prompt-tier:hover {
+      transform: translateY(-2px);
     }
 
     .prompt-tier.highlight {
@@ -871,9 +1013,35 @@
       white-space: pre-line;
     }
 
+    /* Collapsible Harvard Reference Accordion */
+    details.harvard-box {
+      margin-top: 16px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1.5px solid #ffc8df;
+      border-radius: 16px;
+      padding: 14px 20px;
+    }
+    details.harvard-box summary {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      color: var(--berry-deep);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    details.harvard-box ol {
+      margin-top: 12px;
+      padding-left: 22px;
+      font-size: 0.89rem;
+      display: grid;
+      gap: 7px;
+    }
+
     /* Progress Bar for AI vs Human Contribution */
     .ratio-bar {
-      height: 26px;
+      height: 28px;
       border-radius: 999px;
       overflow: hidden;
       display: flex;
@@ -891,6 +1059,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0 8px;
+      white-space: nowrap;
     }
 
     .ratio-human {
@@ -898,6 +1068,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0 8px;
+      white-space: nowrap;
     }
 
     /* Exercise Bottom Navigation */
@@ -912,38 +1084,40 @@
       border-top: 2px dashed #f5b3ce;
     }
 
-    /* Floating Vinyl Music Box Widget */
+    /* Floating Canon in D (Piano & Cello) Player Widget */
     .music-widget {
       position: fixed;
       bottom: 22px;
       right: 22px;
       z-index: 1200;
-      background: rgba(255, 246, 251, 0.92);
+      background: rgba(255, 246, 251, 0.94);
       backdrop-filter: blur(18px);
       border: 1.5px solid #fff;
       border-radius: 999px;
-      padding: 8px 16px 8px 10px;
+      padding: 8px 18px 8px 10px;
       box-shadow: 0 12px 32px rgba(94, 25, 56, 0.25);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
       cursor: pointer;
-      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .music-widget:hover {
-      transform: scale(1.04);
+      transform: scale(1.04) translateY(-2px);
+      box-shadow: 0 16px 38px rgba(168, 56, 104, 0.34);
     }
 
     .vinyl-mini {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: radial-gradient(circle, #ffd6e6 20%, #5e1938 22%, #2b0c1a 65%, #a83868 100%);
       display: grid;
       place-items: center;
       color: #fff;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
+      box-shadow: 0 3px 10px rgba(94, 25, 56, 0.3);
     }
 
     .vinyl-mini.playing {
@@ -953,8 +1127,8 @@
     .eq-bars {
       display: flex;
       align-items: flex-end;
-      gap: 2px;
-      height: 14px;
+      gap: 2.5px;
+      height: 15px;
     }
 
     .eq-bar {
@@ -966,17 +1140,49 @@
     }
 
     .playing .eq-bar {
-      animation: eqPulse 0.7s ease-in-out infinite alternate;
+      animation: eqPulse 0.65s ease-in-out infinite alternate;
     }
-    .playing .eq-bar:nth-child(2) { animation-delay: 0.2s; }
-    .playing .eq-bar:nth-child(3) { animation-delay: 0.4s; }
+    .playing .eq-bar:nth-child(2) { animation-delay: 0.18s; }
+    .playing .eq-bar:nth-child(3) { animation-delay: 0.36s; }
+    .playing .eq-bar:nth-child(4) { animation-delay: 0.52s; }
 
     @keyframes eqPulse {
       from { height: 4px; }
-      to { height: 14px; }
+      to { height: 15px; }
     }
 
-    /* Lightbox Modal */
+    /* Floating Back-to-Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 84px;
+      right: 26px;
+      z-index: 1150;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--berry-primary), var(--pink-soft));
+      color: #fff;
+      border: 2px solid #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 22px rgba(94, 25, 56, 0.25);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: all 0.3s ease;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px) scale(1.06);
+    }
+
+    /* Lightbox Modal with Prev/Next Controls */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -1003,7 +1209,7 @@
       max-width: 92vw;
       max-height: 90vh;
       background: #fff;
-      padding: 14px;
+      padding: 16px;
       border-radius: 22px;
       text-align: center;
       position: relative;
@@ -1012,7 +1218,7 @@
 
     .lightbox-content img {
       max-width: 100%;
-      max-height: 76vh;
+      max-height: 72vh;
       border-radius: 14px;
       display: block;
       margin: 0 auto;
@@ -1031,6 +1237,13 @@
       font-size: 1.2rem;
       cursor: pointer;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .lightbox-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 12px;
     }
 
     /* Footer */
@@ -1110,18 +1323,31 @@
       .piano-keys {
         grid-template-columns: repeat(4, 1fr);
       }
+      .ratio-bar {
+        font-size: 0.7rem;
+      }
+      .sky-sticker {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ambient Cosmic Glow & Particle Canvas -->
+  <!-- Reading Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Ambient Cosmic Glow, Decorative Stickers & Particle Canvas -->
   <div class="ambient-orb orb-1"></div>
   <div class="ambient-orb orb-2"></div>
+  <div class="ambient-orb orb-3"></div>
+  <span class="sky-sticker sticker-1">🪐</span>
+  <span class="sky-sticker sticker-2">✨</span>
+  <span class="sky-sticker sticker-3">🎼</span>
   <canvas id="cosmic-canvas"></canvas>
 
   <!-- Navigation Header -->
-  <nav class="navbar" aria-label="Điều hướng chính">
+  <nav class="navbar" id="mainNavbar" aria-label="Điều hướng chính">
     <a href="#about" class="brand" onclick="navigateTo('about')">
       <span class="brand-disc">♫</span>
       <span>Phi Nhung • Music Portfolio</span>
@@ -1172,6 +1398,7 @@
       <div class="glass-card">
         <div class="hero-grid">
           <div class="avatar-stage">
+            <div class="orbit-ring"></div>
             <div class="vinyl-halo">
               <img src="avt.jpg" alt="Ảnh đại diện Hoàng Phi Nhung" class="avatar-img"
                    onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23ffd6e6%22/><text x=%2250%25%22 y=%2246%25%22 font-size=%2252%22 text-anchor=%22middle%22 fill=%22%23a83868%22>🎵</text><text x=%2250%25%22 y=%2268%25%22 font-family=%22sans-serif%22 font-size=%2216%22 font-weight=%22bold%22 text-anchor=%22middle%22 fill=%22%235e1938%22>Hoàng Phi Nhung</text></svg>'" />
@@ -1179,9 +1406,15 @@
               <span class="floating-note note-2">♫</span>
               <span class="floating-note note-3">✦</span>
             </div>
-            <p style="margin-top: 14px; font-weight: 700; color: var(--berry-primary); font-size: 0.92rem;">
-              🎧 Giai điệu số &amp; Cảm hứng sư phạm
-            </p>
+            <div class="melody-pill">
+              <span class="wave-bars" id="heroWaveBars">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+              </span>
+              <span>🎧 Giai điệu số &amp; Cảm hứng sư phạm</span>
+            </div>
           </div>
 
           <div>
@@ -1208,14 +1441,14 @@
               từng tiết học âm nhạc phổ thông trở nên gần gũi và giàu cảm xúc hơn với học sinh.
             </p>
 
-            <!-- Interactive Mini Piano -->
+            <!-- Interactive Mini Piano + Canon in D Welcome Phrase -->
             <div class="piano-box">
               <div class="piano-header">
                 <div>
-                  <h4 style="font-size: 1rem;">🎹 Phím Đàn Mộng Mơ (Chạm phím hoặc bấm phím A–K)</h4>
-                  <p style="font-size: 0.82rem; color: var(--text-muted);">Thử dạo một vài nốt nhạc hộp nhạc dịu nhẹ trước khi khám phá các bài tập nhé!</p>
+                  <h4 style="font-size: 1rem;">🎹 Phím Đàn Mộng Mơ (Chạm phím hoặc bấm A–K)</h4>
+                  <p style="font-size: 0.82rem; color: var(--text-muted);">Dạo vài nốt nhạc hoặc nhấn nút bên cạnh để nghe khúc dạo <strong>Canon in D (Piano &amp; Cello)</strong> chào mừng nhé!</p>
                 </div>
-                <button class="btn-pearl" onclick="playWelcomeArpeggio()">✨ Nghe hợp âm chào mừng</button>
+                <button class="btn-pearl" id="welcomeCanonBtn" onclick="playWelcomeCanon()">🎻 Nghe Canon in D chào mừng</button>
               </div>
               <div class="piano-keys" id="pianoKeys">
                 <button class="piano-key" data-note="261.63" data-key="a"><span class="solfege">Đô</span><span class="kbd">A</span></button>
@@ -1234,7 +1467,7 @@
 
       <!-- Goals Grid -->
       <div class="grid-2">
-        <div class="glass-card">
+        <div class="glass-card reveal-item">
           <span class="pill-tag">🎯 Định hướng tương lai</span>
           <h2 style="margin-bottom: 12px;">Mục tiêu học tập &amp; Phát triển cá nhân</h2>
           <ul class="step-list">
@@ -1250,7 +1483,7 @@
           </ul>
         </div>
 
-        <div class="glass-card">
+        <div class="glass-card reveal-item">
           <span class="pill-tag">📁 Ý nghĩa trang web</span>
           <h2 style="margin-bottom: 12px;">Mục tiêu của Digital Portfolio</h2>
           <ul class="step-list">
@@ -1285,10 +1518,10 @@
 
       <div class="grid-3">
         <!-- Card 1 -->
-        <article class="project-card" onclick="navigateTo('bai-1')">
+        <article class="project-card tilt-card" onclick="navigateTo('bai-1')">
           <div>
             <div class="project-num">
-              <span class="chapter-pill">Chương 1 • Bài 1</span>
+              <span class="chapter-pill">Chương 1 • Bài 1 (Mục 1.4)</span>
               <span>🗂️</span>
             </div>
             <h3 style="margin-bottom: 8px;">Thao tác cơ bản với tệp tin và thư mục</h3>
@@ -1300,10 +1533,10 @@
         </article>
 
         <!-- Card 2 -->
-        <article class="project-card" onclick="navigateTo('bai-2')">
+        <article class="project-card tilt-card" onclick="navigateTo('bai-2')">
           <div>
             <div class="project-num">
-              <span class="chapter-pill">Chương 2 • Bài 2</span>
+              <span class="chapter-pill">Chương 2 • Bài 2 (Mục 2.4)</span>
               <span>🔎</span>
             </div>
             <h3 style="margin-bottom: 8px;">Tìm kiếm và đánh giá thông tin học thuật</h3>
@@ -1315,10 +1548,10 @@
         </article>
 
         <!-- Card 3 -->
-        <article class="project-card" onclick="navigateTo('bai-3')">
+        <article class="project-card tilt-card" onclick="navigateTo('bai-3')">
           <div>
             <div class="project-num">
-              <span class="chapter-pill">Chương 3 • Bài 3</span>
+              <span class="chapter-pill">Chương 3 • Bài 3 (Mục 3.4)</span>
               <span>🪄</span>
             </div>
             <h3 style="margin-bottom: 8px;">Viết Prompt hiệu quả cho các tác vụ học tập</h3>
@@ -1330,10 +1563,10 @@
         </article>
 
         <!-- Card 4 -->
-        <article class="project-card" onclick="navigateTo('bai-4')">
+        <article class="project-card tilt-card" onclick="navigateTo('bai-4')">
           <div>
             <div class="project-num">
-              <span class="chapter-pill">Chương 4 • Bài 4</span>
+              <span class="chapter-pill">Chương 4 • Bài 4 (Mục 4.4)</span>
               <span>🤝</span>
             </div>
             <h3 style="margin-bottom: 8px;">Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h3>
@@ -1345,10 +1578,10 @@
         </article>
 
         <!-- Card 5 -->
-        <article class="project-card" onclick="navigateTo('bai-5')">
+        <article class="project-card tilt-card" onclick="navigateTo('bai-5')">
           <div>
             <div class="project-num">
-              <span class="chapter-pill">Chương 5 • Bài 5</span>
+              <span class="chapter-pill">Chương 5 • Bài 5 (Mục 5.4)</span>
               <span>🎨</span>
             </div>
             <h3 style="margin-bottom: 8px;">Sử dụng AI tạo sinh hỗ trợ sáng tạo nội dung</h3>
@@ -1360,10 +1593,10 @@
         </article>
 
         <!-- Card 6 -->
-        <article class="project-card" onclick="navigateTo('bai-6')">
+        <article class="project-card tilt-card" onclick="navigateTo('bai-6')">
           <div>
             <div class="project-num">
-              <span class="chapter-pill">Chương 6 • Bài 6</span>
+              <span class="chapter-pill">Chương 6 • Bài 6 (Mục 6.4)</span>
               <span>🛡️</span>
             </div>
             <h3 style="margin-bottom: 8px;">Sử dụng AI có trách nhiệm trong học tập &amp; nghiên cứu</h3>
@@ -1707,6 +1940,27 @@
               </tbody>
             </table>
           </div>
+
+          <details class="harvard-box">
+            <summary>
+              <span>📚 Xem đầy đủ Danh mục 12 tài liệu tham khảo (Chuẩn Harvard)</span>
+              <span>▾</span>
+            </summary>
+            <ol>
+              <li>Bauer, W. I. (2020) <em>Music Learning Today: Digital Pedagogy for Creating, Performing, and Responding to Music</em>. Tái bản lần thứ 2. New York: Oxford University Press.</li>
+              <li>Bộ Giáo dục và Đào tạo (2018) <em>Chương trình Giáo dục phổ thông môn Âm nhạc (Ban hành kèm theo Thông tư số 32/2018/TT-BGDĐT ngày 26/12/2018)</em>. Hà Nội: Bộ Giáo dục và Đào tạo.</li>
+              <li>Burnard, P. và Finney, J. (chủ biên) (2007) <em>Music Education with Digital Technology</em>. London: Continuum.</li>
+              <li>Crawford, R. (2017) ‘Rethinking teaching and learning pedagogy for education in the twenty-first century: blended learning in music education’, <em>Music Education Research</em>, 19(2), tr. 195–213.</li>
+              <li>Dorfman, J. (2016) ‘Music teachers’ experiences in one-to-one computing environments’, <em>Journal of Research in Music Education</em>, 64(2), tr. 159–178.</li>
+              <li>Hoàng Long và Hoàng Lân (2005) <em>Phương pháp dạy học âm nhạc</em>. Hà Nội: Nhà xuất bản Đại học Sư phạm.</li>
+              <li>Lê Vinh Hưng (2023) ‘Tích hợp công nghệ số trong dạy học trải nghiệm âm nhạc theo Chương trình Giáo dục phổ thông 2018’, <em>Tạp chí Giáo dục</em>, 23(14), tr. 30–35.</li>
+              <li>Ngô Thị Nam (2021) ‘Đổi mới phương pháp dạy học âm nhạc ở trường phổ thông theo định hướng phát triển năng lực học sinh’, <em>Tạp chí Giáo dục Nghệ thuật</em>, (36), tr. 12–16.</li>
+              <li>Nguyễn Thị Tố Mai (2022) <em>Nghiên cứu ứng dụng phần mềm hỗ trợ dạy học môn Âm nhạc tại các trường trung học cơ sở khu vực nội thành Hà Nội</em>. Luận án Tiến sĩ Lý luận và Phương pháp dạy học Âm nhạc. Trường Đại học Sư phạm Nghệ thuật Trung ương.</li>
+              <li>Ruthmann, S. A. và Mantie, R. (chủ biên) (2017) <em>The Oxford Handbook of Technology and Music Education</em>. New York: Oxford University Press.</li>
+              <li>Trịnh Hoài Thu (2022) ‘Ứng dụng phần mềm âm nhạc trong giảng dạy phân môn Lý thuyết âm nhạc và Ký xướng âm tại các trường sư phạm’, <em>Tạp chí Khoa học Giáo dục Việt Nam</em>, 18(5), tr. 45–50.</li>
+              <li>Waddell, G. và Williamon, A. (2019) ‘Technology use and attitudes in music learning’, <em>Frontiers in ICT</em>, 6, bài số 11, tr. 1–14.</li>
+            </ol>
+          </details>
         </div>
 
         <div class="exercise-nav-footer">
@@ -2083,6 +2337,39 @@
             </p>
           </div>
 
+          <div class="table-wrap" style="margin-bottom: 18px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Công cụ AI</th>
+                  <th>Vai trò trong dự án</th>
+                  <th>Điểm mạnh nổi bật</th>
+                  <th>Điểm yếu cần sinh viên tự sửa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Google Gemini</strong></td>
+                  <td>Khởi tạo dàn ý, cô đọng văn bản thuyết minh.</td>
+                  <td>Xử lý ngữ liệu nhanh, tái cấu trúc theo giới hạn từ linh hoạt, tiếng Việt tự nhiên.</td>
+                  <td>Đôi khi suy diễn chưa chính xác thuật ngữ cấu tạo nhạc cụ (như đàn bầu).</td>
+                </tr>
+                <tr>
+                  <td><strong>DALL-E (ChatGPT)</strong></td>
+                  <td>Tạo hình ảnh minh họa nhạc cụ dân tộc thống nhất.</td>
+                  <td>Hiểu tốt phong cách màu nước, vector phẳng; phối màu ấm áp, giàu thẩm mỹ.</td>
+                  <td>Sai giải phẫu vật thể văn hóa (sai số trục đàn tranh, biến dạng cần đàn bầu).</td>
+                </tr>
+                <tr>
+                  <td><strong>Canva AI</strong></td>
+                  <td>Gợi ý khung bố cục, tách nền và đồng bộ bảng màu.</td>
+                  <td>Tích hợp liền mạch trong môi trường dàn trang, tách nền &amp; trích xuất màu nhanh.</td>
+                  <td>Mẫu bố cục tự động còn rập khuôn, chưa tối ưu mật độ chữ tiếng Việt có dấu.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="figure-grid">
             <div class="figure-card" onclick="openLightbox('Hình 21.jpg', 'Hình 21: Giao diện nhập câu lệnh và kết quả phác thảo cấu trúc nội dung trên Google Gemini')">
               <img src="Hình 21.jpg" alt="Hình 21" />
@@ -2279,7 +2566,7 @@
           <div class="sub-panel">
             <h3 style="margin-bottom: 10px;">💖 3. Điểm tâm đắc nhất</h3>
             <p style="font-size: 0.94rem;">
-              Điều khiến mình tâm đắc nhất chính là quá trình thực hiện <strong>Bài tập 5 (Infographic “Thanh Âm Đất Việt”)</strong> và thiết kế chính trang <strong>Digital Portfolio</strong> này. Khi thấy AI vẽ sai cấu tạo cần đàn bầu hay nhầm khái niệm phương pháp Dalcroze với Orff-Schulwerk ở Bài 6, mình nhận ra kiến thức chuyên môn âm nhạc học tại trường chính là “bộ lọc” quý giá nhất mà không thuật toán nào thay thế được. Việc tự tay biên tập lại từng câu chữ, hiệu đính hình ảnh và lồng ghép bàn phím piano tương tác vào Portfolio giúp sản phẩm mang trọn vẹn cá tính của một sinh viên Sư phạm Âm nhạc.
+              Điều khiến mình tâm đắc nhất chính là quá trình thực hiện <strong>Bài tập 5 (Infographic “Thanh Âm Đất Việt”)</strong> và thiết kế chính trang <strong>Digital Portfolio</strong> này. Khi thấy AI vẽ sai cấu tạo cần đàn bầu hay nhầm khái niệm phương pháp Dalcroze với Orff-Schulwerk ở Bài 6, mình nhận ra kiến thức chuyên môn âm nhạc học tại trường chính là “bộ lọc” quý giá nhất mà không thuật toán nào thay thế được. Việc tự tay biên tập lại từng câu chữ, hiệu đính hình ảnh và lồng ghép bản hòa tấu <em>Canon in D</em> cùng phím đàn tương tác vào Portfolio giúp sản phẩm mang trọn vẹn cá tính của một sinh viên Sư phạm Âm nhạc.
             </p>
           </div>
 
@@ -2341,16 +2628,20 @@
 
   </main>
 
-  <!-- Floating Dreamy Music Box Player -->
-  <div class="music-widget" id="musicWidget" onclick="toggleAmbientMusic()" title="Bật / Tắt giai điệu hộp nhạc mộng mơ">
-    <div class="vinyl-mini" id="vinylMini">♪</div>
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Lên đầu trang" aria-label="Lên đầu trang">↑</button>
+
+  <!-- Floating Canon in D (Piano & Cello) Player Widget -->
+  <div class="music-widget" id="musicWidget" onclick="toggleAmbientMusic()" title="Bật / Tắt bản hòa tấu Canon in D (Piano &amp; Cello)">
+    <div class="vinyl-mini" id="vinylMini">🎻</div>
     <div>
       <div style="font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 0.84rem; color: var(--berry-deep);">
-        Dreamy Music Box
+        Canon in D • Piano &amp; Cello
       </div>
-      <div style="font-size: 0.74rem; color: var(--text-muted);" id="musicStatusText">Nhấp để phát nhạc nền</div>
+      <div style="font-size: 0.74rem; color: var(--text-muted);" id="musicStatusText">Nhấp để phát bản nhạc</div>
     </div>
     <div class="eq-bars" id="eqBars">
+      <span class="eq-bar"></span>
       <span class="eq-bar"></span>
       <span class="eq-bar"></span>
       <span class="eq-bar"></span>
@@ -2363,13 +2654,17 @@
       <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Đóng ảnh">✕</button>
       <img id="lightboxImg" src="" alt="Xem phóng to minh chứng" />
       <p id="lightboxCaption" style="margin-top: 12px; font-weight: 700; color: var(--berry-deep);"></p>
+      <div class="lightbox-nav">
+        <button class="btn-pearl" onclick="stepLightbox(-1)">← Ảnh trước</button>
+        <button class="btn-pearl" onclick="stepLightbox(1)">Ảnh tiếp →</button>
+      </div>
     </div>
   </div>
 
   <!-- Footer (Required Student & Course Info) -->
   <footer>
     <p style="font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--berry-deep); font-size: 1rem; margin-bottom: 4px;">
-      🎵 Sinh viên: Hoàng Phi Nhung • MSSV: 2552210092 • Ngành: Sư phạm Âm nhạc
+      🎵 Sinh viên: Hoàng Phi Nhung • MSSV: 2552210092 • Ngành/Lớp: Sư phạm Âm nhạc
     </p>
     <p style="color: var(--text-muted); font-size: 0.88rem;">
       Trường Đại học Sư phạm Nghệ thuật Trung ương (NUAE) • Học phần: Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo (INF2501)
@@ -2383,12 +2678,10 @@
     function navigateTo(pageId) {
       if (!validPages.includes(pageId)) pageId = 'about';
 
-      // Hide all pages
       document.querySelectorAll('.page-view').forEach(sec => sec.classList.remove('active'));
       const target = document.getElementById('page-' + pageId);
       if (target) target.classList.add('active');
 
-      // Update active nav states
       document.querySelectorAll('.nav-btn, .dropdown-item').forEach(btn => {
         btn.classList.remove('active');
         if (btn.dataset.page === pageId) btn.classList.add('active');
@@ -2399,13 +2692,11 @@
         if (projBtn) projBtn.classList.add('active');
       }
 
-      // Close mobile menu
       document.getElementById('navLinks').classList.remove('mobile-open');
-
-      // Update URL hash & smooth scroll top
       history.replaceState(null, '', '#' + pageId);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      playSoftChime(523.25, 0.08);
+      playPianoNote(587.33, 0, 0.08, 0.9); // D5 soft chime on page switch
+      setTimeout(observeReveals, 80);
     }
 
     function toggleMobileMenu() {
@@ -2417,26 +2708,78 @@
       if (validPages.includes(hash)) {
         navigateTo(hash);
       }
+      observeReveals();
     });
 
-    // ==================== 2. PDF VIEWER EXPAND/COLLAPSE ====================
+    // ==================== 2. SCROLL PROGRESS, NAVBAR & REVEAL ====================
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      document.getElementById('scrollProgress').style.width = pct + '%';
+
+      const nav = document.getElementById('mainNavbar');
+      if (scrollTop > 30) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+
+      const topBtn = document.getElementById('backToTopBtn');
+      if (scrollTop > 260) topBtn.classList.add('show');
+      else topBtn.classList.remove('show');
+    });
+
+    let revealObserver = null;
+    function observeReveals() {
+      const items = document.querySelectorAll('.page-view.active .reveal-item, .page-view.active .section-block');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('visible'));
+        return;
+      }
+      if (revealObserver) revealObserver.disconnect();
+      revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.08 });
+
+      items.forEach(el => {
+        el.classList.add('reveal-item');
+        revealObserver.observe(el);
+      });
+    }
+
+    // ==================== 3. 3D TILT INTERACTION ON PROJECT CARDS ====================
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(900px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg) translateY(-6px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // ==================== 4. PDF VIEWER EXPAND/COLLAPSE ====================
     function togglePdfSize(frameId) {
       const el = document.getElementById(frameId);
       if (!el) return;
       el.classList.toggle('expanded');
     }
 
-    // ==================== 3. PROMPT TABS (BÀI 3) ====================
+    // ==================== 5. PROMPT TABS (BÀI 3) ====================
     function switchPromptTask(taskNum, btnEl) {
       document.querySelectorAll('.prompt-task-panel').forEach(p => p.style.display = 'none');
       document.getElementById('prompt-task-' + taskNum).style.display = 'block';
 
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btnEl.classList.add('active');
-      playSoftChime(659.25, 0.07);
+      playPianoNote(739.99, 0, 0.07, 0.8); // F#5
     }
 
-    // ==================== 4. TABLE SEARCH FILTER (BÀI 2) ====================
+    // ==================== 6. TABLE SEARCH FILTER (BÀI 2) ====================
     function filterSourcesTable() {
       const filter = document.getElementById('sourceSearchInput').value.toLowerCase();
       const rows = document.querySelectorAll('#sourcesTable tbody tr');
@@ -2446,11 +2789,30 @@
       });
     }
 
-    // ==================== 5. LIGHTBOX MODAL ====================
+    // ==================== 7. LIGHTBOX MODAL WITH PREV/NEXT ====================
+    let currentGallery = [];
+    let currentIndex = 0;
+
     function openLightbox(src, caption) {
+      const activePage = document.querySelector('.page-view.active');
+      currentGallery = Array.from(activePage.querySelectorAll('.figure-card')).map(card => ({
+        src: card.querySelector('img').getAttribute('src'),
+        caption: card.querySelector('.figure-caption').textContent
+      }));
+      currentIndex = currentGallery.findIndex(item => item.src === src);
+      if (currentIndex < 0) currentIndex = 0;
+
       document.getElementById('lightboxImg').src = src;
       document.getElementById('lightboxCaption').textContent = caption;
       document.getElementById('lightbox').classList.add('open');
+    }
+
+    function stepLightbox(dir) {
+      if (!currentGallery.length) return;
+      currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
+      const item = currentGallery[currentIndex];
+      document.getElementById('lightboxImg').src = item.src;
+      document.getElementById('lightboxCaption').textContent = item.caption;
     }
 
     function closeLightbox(e) {
@@ -2458,60 +2820,237 @@
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox(e);
+      const lb = document.getElementById('lightbox');
+      if (lb.classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox(e);
+        if (e.key === 'ArrowRight') stepLightbox(1);
+        if (e.key === 'ArrowLeft') stepLightbox(-1);
+      }
     });
 
-    // ==================== 6. WEB AUDIO API: DREAMY PIANO & MUSIC BOX ====================
+    // ==================== 8. WEB AUDIO API: CANON IN D (PIANO & CELLO) + MINI PIANO ====================
     let audioCtx = null;
+    let masterBus = null;
+    let activeTimers = [];
+    let activeWelcomeTimers = [];
 
-    function getAudioCtx() {
+    function getAudioEngine() {
       if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        const compressor = audioCtx.createDynamicsCompressor();
+        compressor.threshold.setValueAtTime(-16, audioCtx.currentTime);
+        compressor.ratio.setValueAtTime(3, audioCtx.currentTime);
+
+        const masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(0.85, audioCtx.currentTime);
+
+        // Warm acoustic room reverb/echo
+        const delayL = audioCtx.createDelay();
+        const delayR = audioCtx.createDelay();
+        delayL.delayTime.value = 0.24;
+        delayR.delayTime.value = 0.36;
+
+        const feedback = audioCtx.createGain();
+        feedback.gain.value = 0.24;
+
+        const wetFilter = audioCtx.createBiquadFilter();
+        wetFilter.type = 'lowpass';
+        wetFilter.frequency.value = 1750;
+
+        const wetGain = audioCtx.createGain();
+        wetGain.gain.value = 0.22;
+
+        masterGain.connect(compressor);
+        masterGain.connect(delayL);
+        delayL.connect(wetFilter);
+        wetFilter.connect(feedback);
+        feedback.connect(delayR);
+        delayR.connect(wetFilter);
+        wetFilter.connect(wetGain);
+        wetGain.connect(compressor);
+
+        compressor.connect(audioCtx.destination);
+        masterBus = masterGain;
       }
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
       }
-      return audioCtx;
+      return { ctx: audioCtx, out: masterBus };
     }
 
-    function playSoftChime(freq, volume = 0.16, duration = 1.1) {
+    // D Major Note Table (Hz)
+    const NOTE = {
+      F2s: 92.50, G2: 98.00, A2: 110.00, B2: 123.47,
+      C3s: 138.59, D3: 146.83, E3: 164.81, F3s: 185.00, G3: 196.00, A3: 220.00, B3: 246.94,
+      C4s: 277.18, D4: 293.66, E4: 329.63, F4s: 369.99, G4: 392.00, A4: 440.00, B4: 493.88,
+      C5s: 554.37, D5: 587.33, E5: 659.25, F5s: 739.99
+    };
+
+    // Warm Acoustic-style Grand Piano Voice
+    function playPianoNote(freq, delaySec = 0, volume = 0.14, duration = 1.65) {
       try {
-        const ctx = getAudioCtx();
-        const now = ctx.currentTime;
+        const { ctx, out } = getAudioEngine();
+        const t = ctx.currentTime + delaySec;
 
         const osc1 = ctx.createOscillator();
         const osc2 = ctx.createOscillator();
-        const gain = ctx.createGain();
+        osc1.type = 'triangle';
+        osc2.type = 'sine';
+        osc1.frequency.setValueAtTime(freq, t);
+        osc2.frequency.setValueAtTime(freq * 2, t); // harmonic shimmer
 
-        osc1.type = 'sine';
-        osc2.type = 'triangle';
-        osc1.frequency.setValueAtTime(freq, now);
-        osc2.frequency.setValueAtTime(freq * 2, now); // bell overtone
+        const subGain = ctx.createGain();
+        subGain.gain.setValueAtTime(freq < 140 ? 0.38 : 0.2, t);
 
-        const overtoneGain = ctx.createGain();
-        overtoneGain.gain.setValueAtTime(0.22, now);
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(Math.min(freq * 5.2, 3400), t);
+        filter.frequency.exponentialRampToValueAtTime(Math.max(freq * 1.5, 320), t + duration * 0.85);
 
-        gain.gain.setValueAtTime(0.001, now);
-        gain.gain.exponentialRampToValueAtTime(volume, now + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+        const env = ctx.createGain();
+        env.gain.setValueAtTime(0.0001, t);
+        env.gain.linearRampToValueAtTime(volume, t + 0.014);
+        env.gain.exponentialRampToValueAtTime(volume * 0.42, t + 0.35);
+        env.gain.exponentialRampToValueAtTime(0.0001, t + duration);
 
-        osc1.connect(gain);
-        osc2.connect(overtoneGain);
-        overtoneGain.connect(gain);
-        gain.connect(ctx.destination);
+        osc1.connect(filter);
+        osc2.connect(subGain);
+        subGain.connect(filter);
+        filter.connect(env);
+        env.connect(out);
 
-        osc1.start(now);
-        osc2.start(now);
-        osc1.stop(now + duration);
-        osc2.stop(now + duration);
+        osc1.start(t);
+        osc2.start(t);
+        osc1.stop(t + duration + 0.05);
+        osc2.stop(t + duration + 0.05);
       } catch (err) {}
     }
 
-    // Interactive Piano Keys
+    // Expressive Bowed Cello Voice with Warm Vibrato
+    function playCelloNote(freq, delaySec = 0, volume = 0.13, duration = 1.6) {
+      try {
+        const { ctx, out } = getAudioEngine();
+        const t = ctx.currentTime + delaySec;
+
+        const oscSaw = ctx.createOscillator();
+        const oscTri = ctx.createOscillator();
+        oscSaw.type = 'sawtooth';
+        oscTri.type = 'triangle';
+        oscSaw.frequency.setValueAtTime(freq, t);
+        oscTri.frequency.setValueAtTime(freq, t);
+        oscSaw.detune.setValueAtTime(-3.5, t);
+        oscTri.detune.setValueAtTime(3.5, t);
+
+        // Gentle expressivo vibrato
+        const vibrato = ctx.createOscillator();
+        const vibGain = ctx.createGain();
+        vibrato.frequency.setValueAtTime(5.1, t);
+        vibGain.gain.setValueAtTime(0, t);
+        vibGain.gain.linearRampToValueAtTime(2.6, t + 0.25);
+        vibrato.connect(vibGain);
+        vibGain.connect(oscSaw.frequency);
+        vibGain.connect(oscTri.frequency);
+
+        const bodyFilter = ctx.createBiquadFilter();
+        bodyFilter.type = 'lowpass';
+        bodyFilter.Q.setValueAtTime(1.4, t);
+        bodyFilter.frequency.setValueAtTime(820, t);
+        bodyFilter.frequency.linearRampToValueAtTime(1250, t + Math.min(0.28, duration * 0.35));
+        bodyFilter.frequency.exponentialRampToValueAtTime(760, t + duration);
+
+        const sawMix = ctx.createGain();
+        sawMix.gain.value = 0.45;
+        const triMix = ctx.createGain();
+        triMix.gain.value = 0.7;
+
+        const env = ctx.createGain();
+        const attack = Math.min(0.11, duration * 0.25);
+        const releaseStart = Math.max(attack + 0.05, duration - 0.18);
+        env.gain.setValueAtTime(0.0001, t);
+        env.gain.linearRampToValueAtTime(volume, t + attack);
+        env.gain.setValueAtTime(volume * 0.92, t + releaseStart);
+        env.gain.exponentialRampToValueAtTime(0.0001, t + duration);
+
+        oscSaw.connect(sawMix);
+        oscTri.connect(triMix);
+        sawMix.connect(bodyFilter);
+        triMix.connect(bodyFilter);
+        bodyFilter.connect(env);
+        env.connect(out);
+
+        oscSaw.start(t);
+        oscTri.start(t);
+        vibrato.start(t);
+        oscSaw.stop(t + duration + 0.05);
+        oscTri.stop(t + duration + 0.05);
+        vibrato.stop(t + duration + 0.05);
+      } catch (err) {}
+    }
+
+    // Canon in D Harmonic Progression (8 chords x 4 eighth-note steps = 32 steps per cycle)
+    const CANON_STEP_MS = 415; // ~72 BPM eighth-note pulse matching the Brooklyn Duo feel
+    const CANON_PIANO_CHORDS = [
+      [NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s],   // 0: D
+      [NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s],   // 1: A
+      [NOTE.B2, NOTE.F3s, NOTE.B3, NOTE.D4],   // 2: Bm
+      [NOTE.F2s, NOTE.C3s, NOTE.F3s, NOTE.A3], // 3: F#m
+      [NOTE.G2, NOTE.D3, NOTE.G3, NOTE.B3],    // 4: G
+      [NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s],   // 5: D
+      [NOTE.G2, NOTE.D3, NOTE.G3, NOTE.B3],    // 6: G
+      [NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s]    // 7: A
+    ];
+
+    // Cello melody cycles (32 steps each; null = hold/rest)
+    const CANON_CELLO_CYCLES = [
+      // Cycle 0: Piano intro (steps 0..15), then soft Cello swell-in on steps 16..31 (G - D - G - A)
+      [
+        null,null,null,null, null,null,null,null, null,null,null,null, null,null,null,null,
+        {f:NOTE.B3, d:4},null,null,null, {f:NOTE.A3, d:4},null,null,null, {f:NOTE.B3, d:4},null,null,null, {f:NOTE.C4s, d:4},null,null,null
+      ],
+      // Cycle 1: Classic Canon Theme I (F#4 - E4 - D4 - C#4 - B3 - A3 - B3 - C#4)
+      [
+        {f:NOTE.F4s, d:4},null,null,null, {f:NOTE.E4, d:4},null,null,null,
+        {f:NOTE.D4, d:4},null,null,null,  {f:NOTE.C4s, d:4},null,null,null,
+        {f:NOTE.B3, d:4},null,null,null,  {f:NOTE.A3, d:4},null,null,null,
+        {f:NOTE.B3, d:4},null,null,null,  {f:NOTE.C4s, d:4},null,null,null
+      ],
+      // Cycle 2: Classic Canon Theme II (D4 - C#4 - B3 - A3 - G3 - F#3 - G3 - E3)
+      [
+        {f:NOTE.D4, d:4},null,null,null,  {f:NOTE.C4s, d:4},null,null,null,
+        {f:NOTE.B3, d:4},null,null,null,  {f:NOTE.A3, d:4},null,null,null,
+        {f:NOTE.G3, d:4},null,null,null,  {f:NOTE.F3s, d:4},null,null,null,
+        {f:NOTE.G3, d:4},null,null,null,  {f:NOTE.E3, d:4},null,null,null
+      ],
+      // Cycle 3: Iconic Quarter-note Singing Line
+      [
+        {f:NOTE.D4, d:2},null, {f:NOTE.F4s, d:2},null,
+        {f:NOTE.A4, d:2},null, {f:NOTE.G4, d:2},null,
+        {f:NOTE.F4s, d:2},null,{f:NOTE.D4, d:2},null,
+        {f:NOTE.F4s, d:2},null,{f:NOTE.E4, d:2},null,
+        {f:NOTE.D4, d:2},null, {f:NOTE.B3, d:2},null,
+        {f:NOTE.D4, d:2},null, {f:NOTE.A4, d:2},null,
+        {f:NOTE.G4, d:2},null, {f:NOTE.B4, d:2},null,
+        {f:NOTE.A4, d:2},null, {f:NOTE.G4, d:2},null
+      ],
+      // Cycle 4: Expressive Eighth-note Flow
+      [
+        {f:NOTE.F4s, d:1}, {f:NOTE.D4, d:1}, {f:NOTE.E4, d:1}, {f:NOTE.F4s, d:1},
+        {f:NOTE.E4, d:1},  {f:NOTE.C4s, d:1},{f:NOTE.A3, d:1}, {f:NOTE.C4s, d:1},
+        {f:NOTE.D4, d:1},  {f:NOTE.B3, d:1}, {f:NOTE.C4s, d:1},{f:NOTE.D4, d:1},
+        {f:NOTE.C4s, d:1}, {f:NOTE.F4s, d:1},{f:NOTE.A4, d:1}, {f:NOTE.F4s, d:1},
+        {f:NOTE.G4, d:1},  {f:NOTE.F4s, d:1},{f:NOTE.E4, d:1}, {f:NOTE.G4, d:1},
+        {f:NOTE.F4s, d:1}, {f:NOTE.E4, d:1}, {f:NOTE.D4, d:1}, {f:NOTE.C4s, d:1},
+        {f:NOTE.B3, d:1},  {f:NOTE.A3, d:1}, {f:NOTE.G3, d:1}, {f:NOTE.B3, d:1},
+        {f:NOTE.C4s, d:1}, {f:NOTE.E4, d:1}, {f:NOTE.A4, d:1}, {f:NOTE.G4, d:1}
+      ]
+    ];
+
+    // Interactive Mini Piano Keys
     document.querySelectorAll('.piano-key').forEach(key => {
       key.addEventListener('mousedown', (e) => {
         const freq = parseFloat(key.dataset.note);
-        playSoftChime(freq, 0.2, 1.3);
+        playPianoNote(freq, 0, 0.2, 1.4);
         spawnBurst(e.clientX, e.clientY);
       });
     });
@@ -2522,52 +3061,158 @@
       const keyBtn = document.querySelector(`.piano-key[data-key="${k}"]`);
       if (keyBtn) {
         keyBtn.classList.add('pressed');
-        playSoftChime(parseFloat(keyBtn.dataset.note), 0.2, 1.3);
+        playPianoNote(parseFloat(keyBtn.dataset.note), 0, 0.2, 1.4);
         const rect = keyBtn.getBoundingClientRect();
         spawnBurst(rect.left + rect.width / 2, rect.top);
         setTimeout(() => keyBtn.classList.remove('pressed'), 180);
       }
     });
 
-    function playWelcomeArpeggio() {
-      const notes = [261.63, 329.63, 392.00, 493.88, 523.25, 659.25];
-      notes.forEach((n, idx) => {
-        setTimeout(() => playSoftChime(n, 0.16, 1.4), idx * 140);
-      });
+    // Welcome Button: Plays Opening Excerpt of Canon in D (Piano + Cello)
+    let isWelcomePlaying = false;
+    function stopWelcomeCanon() {
+      activeWelcomeTimers.forEach(t => clearTimeout(t));
+      activeWelcomeTimers = [];
+      isWelcomePlaying = false;
+      const btn = document.getElementById('welcomeCanonBtn');
+      if (btn) {
+        btn.classList.remove('active-playing');
+        btn.textContent = '🎻 Nghe Canon in D chào mừng';
+      }
+      if (!isPlayingMusic) {
+        document.getElementById('heroWaveBars').classList.remove('active-song');
+      }
     }
 
-    // Ambient Dreamy Music Box Loop
+    function playWelcomeCanon() {
+      if (isWelcomePlaying) {
+        stopWelcomeCanon();
+        return;
+      }
+      isWelcomePlaying = true;
+      const btn = document.getElementById('welcomeCanonBtn');
+      btn.classList.add('active-playing');
+      btn.textContent = '⏹ Đang tấu Canon in D...';
+      document.getElementById('heroWaveBars').classList.add('active-song');
+
+      const stepMs = 380;
+      const keyButtons = document.querySelectorAll('.piano-key');
+
+      // 4-chord opening excerpt: D -> A -> Bm -> F#m -> final warm D chord
+      const welcomePiano = [
+        NOTE.D3, NOTE.A3, NOTE.D4, NOTE.F4s,
+        NOTE.A2, NOTE.E3, NOTE.A3, NOTE.C4s,
+        NOTE.B2, NOTE.F3s, NOTE.B3, NOTE.D4,
+        NOTE.F2s, NOTE.C3s, NOTE.F3s, NOTE.A3
+      ];
+      const welcomeCello = {
+        0:  { f: NOTE.F4s, d: 4, keyIdx: 4 }, // F#4
+        4:  { f: NOTE.E4,  d: 4, keyIdx: 2 }, // E4
+        8:  { f: NOTE.D4,  d: 4, keyIdx: 1 }, // D4
+        12: { f: NOTE.C4s, d: 4, keyIdx: 0 }  // C#4
+      };
+
+      welcomePiano.forEach((pFreq, idx) => {
+        const timer = setTimeout(() => {
+          playPianoNote(pFreq, 0, 0.14, 1.5);
+          if (welcomeCello[idx]) {
+            const c = welcomeCello[idx];
+            playCelloNote(c.f, 0, 0.14, (c.d * stepMs) / 1000 + 0.12);
+            const kBtn = keyButtons[c.keyIdx];
+            if (kBtn) {
+              kBtn.classList.add('pressed');
+              const r = kBtn.getBoundingClientRect();
+              spawnBurst(r.left + r.width / 2, r.top);
+              setTimeout(() => kBtn.classList.remove('pressed'), 420);
+            }
+          }
+        }, idx * stepMs);
+        activeWelcomeTimers.push(timer);
+      });
+
+      // Warm final Tonic D resolution chord
+      const endTimer = setTimeout(() => {
+        playPianoNote(NOTE.D3, 0, 0.14, 2.4);
+        playPianoNote(NOTE.A3, 0.04, 0.12, 2.4);
+        playPianoNote(NOTE.F4s, 0.08, 0.13, 2.4);
+        playCelloNote(NOTE.D4, 0.04, 0.15, 2.3);
+        const kBtn = keyButtons[1];
+        if (kBtn) {
+          kBtn.classList.add('pressed');
+          setTimeout(() => kBtn.classList.remove('pressed'), 700);
+        }
+      }, welcomePiano.length * stepMs);
+      activeWelcomeTimers.push(endTimer);
+
+      const doneTimer = setTimeout(() => {
+        stopWelcomeCanon();
+      }, (welcomePiano.length + 6) * stepMs);
+      activeWelcomeTimers.push(doneTimer);
+    }
+
+    // Floating Canon in D (Piano & Cello) Looping Background Player
     let musicInterval = null;
     let isPlayingMusic = false;
-    const lullabyNotes = [523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880.00, 698.46, 523.25, 587.33, 659.25, 392.00];
-    let noteStep = 0;
+    let canonStepIndex = 0;
+    let canonCycleIndex = 0;
+
+    function playCanonTick() {
+      const chordIdx = Math.floor(canonStepIndex / 4) % 8;
+      const arpIdx = canonStepIndex % 4;
+      const pianoFreq = CANON_PIANO_CHORDS[chordIdx][arpIdx];
+
+      // Gentle expressive rubato feel on piano velocity
+      const pianoVel = arpIdx === 0 ? 0.13 : 0.095;
+      playPianoNote(pianoFreq, 0, pianoVel, 1.85);
+
+      // Cello melody
+      const celloEvent = CANON_CELLO_CYCLES[canonCycleIndex][canonStepIndex];
+      if (celloEvent) {
+        const durSec = (celloEvent.d * CANON_STEP_MS) / 1000 + 0.14;
+        const celloVel = canonCycleIndex === 0 ? 0.10 : 0.135;
+        playCelloNote(celloEvent.f, 0, celloVel, durSec);
+      }
+
+      canonStepIndex++;
+      if (canonStepIndex >= 32) {
+        canonStepIndex = 0;
+        canonCycleIndex++;
+        if (canonCycleIndex >= CANON_CELLO_CYCLES.length) {
+          canonCycleIndex = 1; // Loop seamlessly through Themes 1–4
+        }
+      }
+    }
 
     function toggleAmbientMusic() {
       const vinyl = document.getElementById('vinylMini');
       const eq = document.getElementById('eqBars');
       const status = document.getElementById('musicStatusText');
+      const heroWave = document.getElementById('heroWaveBars');
 
       if (isPlayingMusic) {
         clearInterval(musicInterval);
+        musicInterval = null;
         isPlayingMusic = false;
         vinyl.classList.remove('playing');
         eq.classList.remove('playing');
-        status.textContent = 'Đã tạm dừng nhạc';
+        if (!isWelcomePlaying) heroWave.classList.remove('active-song');
+        status.textContent = 'Đã tạm dừng';
       } else {
+        if (isWelcomePlaying) stopWelcomeCanon();
         isPlayingMusic = true;
+        canonStepIndex = 0;
+        canonCycleIndex = 0;
         vinyl.classList.add('playing');
         eq.classList.add('playing');
-        status.textContent = 'Đang phát giai điệu...';
-        playSoftChime(lullabyNotes[noteStep % lullabyNotes.length], 0.08, 1.6);
-        noteStep++;
-        musicInterval = setInterval(() => {
-          playSoftChime(lullabyNotes[noteStep % lullabyNotes.length], 0.075, 1.6);
-          noteStep++;
-        }, 620);
+        heroWave.classList.add('active-song');
+        status.textContent = 'Đang tấu Canon in D...';
+
+        playCanonTick();
+        musicInterval = setInterval(playCanonTick, CANON_STEP_MS);
       }
     }
 
-    // ==================== 7. COSMIC STARS & FLOATING MUSIC NOTES CANVAS ====================
+    // ==================== 9. COSMIC STARS & FLOATING MUSIC NOTES CANVAS ====================
     const canvas = document.getElementById('cosmic-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -2581,37 +3226,43 @@
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    for (let i = 0; i < 42; i++) {
+    for (let i = 0; i < 48; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: 10 + Math.random() * 12,
+        size: 10 + Math.random() * 13,
         speedY: -0.25 - Math.random() * 0.45,
         speedX: (Math.random() - 0.5) * 0.35,
-        alpha: 0.35 + Math.random() * 0.55,
+        alpha: 0.38 + Math.random() * 0.55,
         symbol: symbols[Math.floor(Math.random() * symbols.length)],
         wobble: Math.random() * Math.PI * 2
       });
     }
 
     function spawnBurst(x, y) {
-      for (let i = 0; i < 7; i++) {
-        const angle = (Math.PI * 2 * i) / 7;
+      for (let i = 0; i < 8; i++) {
+        const angle = (Math.PI * 2 * i) / 8;
         bursts.push({
           x,
           y,
-          vx: Math.cos(angle) * (1.5 + Math.random() * 2),
-          vy: Math.sin(angle) * (1.5 + Math.random() * 2) - 1,
+          vx: Math.cos(angle) * (1.6 + Math.random() * 2.2),
+          vy: Math.sin(angle) * (1.6 + Math.random() * 2.2) - 1,
           life: 1,
           symbol: symbols[Math.floor(Math.random() * symbols.length)]
         });
       }
     }
 
+    window.addEventListener('click', (e) => {
+      if (e.target.closest('button') || e.target.closest('.figure-card') || e.target.closest('.project-card')) {
+        spawnBurst(e.clientX, e.clientY);
+      }
+    });
+
     let lastTrail = 0;
     window.addEventListener('mousemove', (e) => {
       const now = Date.now();
-      if (now - lastTrail > 95) {
+      if (now - lastTrail > 85) {
         lastTrail = now;
         bursts.push({
           x: e.clientX,
@@ -2627,9 +3278,8 @@
     function animateCosmic() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Ambient floating notes & stars
       particles.forEach(p => {
-        p.wobble += 0.02;
+        p.wobble += 0.022;
         p.y += p.speedY;
         p.x += p.speedX + Math.sin(p.wobble) * 0.25;
 
@@ -2641,14 +3291,13 @@
         ctx.save();
         ctx.globalAlpha = p.alpha * (0.7 + 0.3 * Math.sin(p.wobble * 1.5));
         ctx.font = `${p.size}px Quicksand, sans-serif`;
-        ctx.fillStyle = p.symbol === '♪' || p.symbol === '♫' ? '#fff0f6' : '#ffe699';
-        ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
-        ctx.shadowBlur = 8;
+        ctx.fillStyle = p.symbol === '♪' || p.symbol === '♫' || p.symbol === '♩' ? '#fff0f6' : '#ffe699';
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.85)';
+        ctx.shadowBlur = 9;
         ctx.fillText(p.symbol, p.x, p.y);
         ctx.restore();
       });
 
-      // Interactive cursor & piano bursts
       for (let i = bursts.length - 1; i >= 0; i--) {
         const b = bursts[i];
         b.x += b.vx;
@@ -2662,6 +3311,8 @@
         ctx.globalAlpha = b.life;
         ctx.font = '15px Quicksand, sans-serif';
         ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = 'rgba(255, 214, 230, 0.9)';
+        ctx.shadowBlur = 6;
         ctx.fillText(b.symbol, b.x, b.y);
         ctx.restore();
       }
